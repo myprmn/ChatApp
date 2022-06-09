@@ -1,6 +1,6 @@
-package com.example.chatapp
+package com.example.chatapp.model
 
-class ClassUser (
+class UserModel (
     val name : String? = null,
     val password : String? = null,
     val uuid : String? = null

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
+import com.example.chatapp.model.UserModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -50,7 +51,7 @@ class SignUp : AppCompatActivity() {
                     val uuid = mAuth.uid.toString()
 
                     dbSignUp.child("User").child((uuid))
-                        .setValue(ClassUser(name,email,uuid))
+                        .setValue(UserModel(name,email,uuid))
                     Toast.makeText(this,"Sign Up Berhasil", Toast.LENGTH_SHORT).show()
                     etEmailSignUp.text.clear()
                     etNamaLengkapSignUp.text.clear()

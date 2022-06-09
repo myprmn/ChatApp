@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="30dp"
         app:cardCornerRadius="10dp"
         android:outlineSpotShadowColor="@color/black">
@@ -66,14 +66,13 @@
                     android:layout_height="wrap_content"
                     android:text="@string/signIn"
                     android:textColor="@color/colorWhite"
-                    android:layout_margin="20dp"/>
+                    android:layout_marginLeft="43dp"/>
                 <Button
                     android:id="@+id/SignInOnSignUp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Klik disini"
                     android:textStyle="bold"
-                    android:layout_marginTop="20dp"
                     style="@style/Widget.MaterialComponents.Button.TextButton"
                     android:textColor="@color/colorWhite"/>
             </LinearLayout>
