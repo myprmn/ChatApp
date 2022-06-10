@@ -12,8 +12,8 @@ import kotlinx.android.synthetic.main.activity_sign_up.*
 
 class Login : AppCompatActivity() {
 
-    lateinit var auth : FirebaseAuth
-    lateinit var dbSignIn : DatabaseReference
+    lateinit var auth: FirebaseAuth
+    lateinit var dbSignIn: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,25 +22,29 @@ class Login : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         dbSignIn = FirebaseDatabase.getInstance().reference
 
+        tvSignUpOnSignIn.setOnClickListener {
+            startActivity(Intent(this, SignUp::class.java))
+        }
+
         btnSignIn.setOnClickListener {
             val email = etEmailSignIn.text.toString()
             val password = etPasswordSignIn.text.toString()
-            if (email !="" && password!=""){
+            if (email != "" && password != "") {
                 DataLogin(email, password)
             } else {
-                Toast.makeText(this,"Field masih kosong",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Field masih kosong", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
-    private fun DataLogin(email:String, password: String) {
-        auth.signInWithEmailAndPassword(email,password)
-            .addOnCompleteListener(this){task->
-                if (task.isComplete){
-                    Toast.makeText(this,"Login Berhasil",Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this,MainActivity::class.java))
+    private fun DataLogin(email: String, password: String) {
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isComplete) {
+                    Toast.makeText(this, "Login Berhasil", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, MainActivity::class.java))
                 } else {
-                    Toast.makeText(this,"Login Gagal",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Login Gagal", Toast.LENGTH_SHORT).show()
                 }
             }
     }

@@ -52,4 +52,17 @@
                 android:backgroundTint="@color/colorPrimaryDark"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text = "Belum punya akun?"
+        android:layout_gravity="center"/>
+    <TextView
+        android:id="@+id/tvSignUpOnSignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text = "DAFTAR DISINI"
+        android:textStyle="bold"
+        android:textColor="@color/colorAccent"
+        android:layout_gravity="center"/>
 </LinearLayout>
